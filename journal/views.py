@@ -1,17 +1,9 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-
-from rest_framework import viewsets
+from rest_framework import viewsets, mixins
 from .serializers import EntrySerializer
 from .models import Entry
 
-
-def index(request):
-    return HttpResponse("This is journal.")
-
-def add_entry(request):
-    return HttpResponse("You can add entry here.")
-
-class EntriesView(viewsets.ModelViewSet):
+class EntriesView(mixins.RetrieveModelMixin,
+                  mixins.ListModelMixin,
+                  viewsets.GenericViewSet):
     serializer_class = EntrySerializer
     queryset = Entry.objects.all()

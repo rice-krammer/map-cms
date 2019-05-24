@@ -24,6 +24,5 @@ router.register(r'entries', journal_views.EntriesView, 'entry')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('', include('journal.urls')),
     path('api/', include(router.urls)),
 ]
