@@ -1,0 +1,2 @@
+djangorestframework >= 3.9.4
+django-cors-headers >= 3.0.1

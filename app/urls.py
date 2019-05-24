@@ -1,4 +1,4 @@
-"""map URL Configuration
+"""Krammer Map URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
@@ -16,7 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+from rest_framework import routers
+from journal import views as journal_views
+
+router = routers.DefaultRouter()
+router.register(r'entries', journal_views.EntriesView, 'entry')
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('journal.urls')),
+    #path('', include('journal.urls')),
+    path('api/', include(router.urls)),
 ]
