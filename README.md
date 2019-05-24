@@ -1,5 +1,5 @@
 # Krammer Map CMS
-Krammer Map is an anonymous and collaborative online journal to share feelings, built with [Django Framework](https://www.djangoproject.com). All installation instructions assume you already have [Homebrew](http://brew.sh) installed. If you are not running on MacOS or a Linux distribution, see the hyperlinks for dependencies.
+Krammer Map is an anonymous and collaborative online journal to share feelings. The project has two dependencies: [Webview](https://github.com/rice-krammer/map-webview) and [CMS](https://github.com/rice-krammer/map-cms). CMS (Content Management System) is built with [Django Framework](https://www.djangoproject.com). All installation instructions assume you already have [Homebrew](http://brew.sh) installed. If you are not running on MacOS or a Linux distribution, see the hyperlinks for dependencies.
 
 # Dependencies
 * [Python](https://www.python.org/) (≥ 3.7)
@@ -19,7 +19,7 @@ Now we can install the repository. Run the following commands line by line:
 
 ```bash
 git clone https://github.com/rice-krammer/map-cms
-cd map/
+cd map-cms/
 pip3 install -r requirements/dev.txt
 ```
 
