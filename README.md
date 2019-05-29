@@ -39,3 +39,37 @@ Finally, start the server:
 ```bash
 python3 manage.py runserver
 ```
+
+# API Endpoints
+Map CMS provides a number of API endpoints that allow clients to add/alter/remove data to/from the database. Other repositories such as [Webview](https://github.com/rice-krammer/map-webview) and [Sentiment Analysis](https://github.com/rice-krammer/sentiment-analysis) use these API endpoints to make meaning of the stored data.
+
+### `GET /api/entries/<id>`
+Lists all the entries, ordering by the id DESC. If `<id>` is provided, then shows a single entry of the given id.
+```
+[
+    {
+        "id": 2,
+        "entry": "Such an amazing day!",
+        "pub_datetime": "2019-05-29T12:16:11.818381-05:00",
+        "pub_recently": true,
+        "pub_location": "0.020001, 0.010001"
+    },
+    {
+        "id": 1,
+        "entry": "I was feeling down today, but it is getting better!",
+        "pub_datetime": "2019-05-24T11:06:27-05:00",
+        "pub_recently": false,
+        "pub_location": "29.725062, -95.389317"
+    }
+]
+```
+
+### `POST /api/entries/`
+Posts a new entry to the journal. The request IP should be whitelisted to allow posts from authorized clients.
+```
+{
+    "entry": "This is an example entry.",
+    "pub_loc_long": "0.000000",
+    "pub_loc_lat": "0.000000"
+}
+```

@@ -10,7 +10,7 @@ class Entry(models.Model):
     entry = models.CharField('Entry', max_length=1000)
     pub_datetime = models.DateTimeField('Date/Time Published')
     pub_loc_long = models.DecimalField('Location Longitude', max_digits=9, decimal_places=6)
-    pub_loc_lat = models.DecimalField('Location Lattitue', max_digits=9, decimal_places=6)
+    pub_loc_lat = models.DecimalField('Location Lattidue', max_digits=9, decimal_places=6)
 
     def __str__(self):
         """
@@ -19,13 +19,13 @@ class Entry(models.Model):
         """
         return self.entry
     
-    def was_published_recently(self):
+    def pub_recently(self):
         """
         Returns whether the entry is published within a day.
         """
         return self.pub_datetime >= timezone.now() - datetime.timedelta(days=1)
 
-    def location(self):
+    def pub_location(self):
         """
         Returns the location in Google Maps readable formatl; if location is not set
         returns False.

@@ -123,6 +123,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
+# REST Framework
+# No DOCS URL Provided
+
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000"
 ]
